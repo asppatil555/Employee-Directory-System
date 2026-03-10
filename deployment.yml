@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: employee-directory-deployment
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: employee-directory-app
+ template:
+  metadata:
+   labels:
+    app: employee-directory-app
+  spec:
+   containers:
+   - name: employee-directory-container
+     image: akshapatil0610/employee-directory:latest
+     ports:
+     - containerPort: 8082
+     env:
+      - name: SPRING_PROFILES_ACTIVE
+        value: k3
