@@ -16,7 +16,7 @@ spec:
    - name: employee-directory-container
      image: akshapatil0610/employee-directory:latest
      ports:
-     - containerPort: 8082
+     - containerPort: 8080
      env:
       - name: SPRING_PROFILES_ACTIVE
         value: k3
